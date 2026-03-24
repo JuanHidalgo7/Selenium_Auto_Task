@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenEDG Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-page">
+    <header class="topbar">
+        <div>
+            <div class="brand">OpenEDG Dashboard</div>
+            <div class="subbrand">Live counters from the platform</div>
+        </div>
+        <form method="post" action="{{ url_for('logout') }}">
+            <button type="submit" class="btn btn-secondary">Logout</button>
+        </form>
+    </header>
+
+    <main class="dashboard-shell">
+        <section class="status-row">
+            <div id="statusText" class="status-pill">Loading data...</div>
+            <div class="status-pill">Auto refresh: every 5 minutes</div>
+        </section>
+
+        <section class="cards-grid">
+            <article class="counter-card danger">
+                <h2>Suspicious Exam Sessions</h2>
+                <div id="suspicious" class="counter-value">N/A</div>
+            </article>
+
+            <article class="counter-card warning">
+                <h2>Unverified Exam Sessions</h2>
+                <div id="unverified" class="counter-value">N/A</div>
+            </article>
+
+            <article class="counter-card info">
+                <h2>Organization Applications</h2>
+                <div id="orgapps" class="counter-value">N/A</div>
+            </article>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

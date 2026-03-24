@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenEDG Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+    <main class="login-shell">
+        <section class="login-card">
+            <div class="brand">OpenEDG Dashboard</div>
+            <h1>Connect to OpenEDG</h1>
+            <p class="subtitle">Enter your OpenEDG credentials to load the live dashboard counters.</p>
+
+            {% if error %}
+                <div class="alert alert-error">{{ error }}</div>
+            {% endif %}
+
+            <form method="post" action="{{ url_for('login_route') }}" class="login-form">
+                <label for="username">Username</label>
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    value="{{ username or '' }}"
+                    placeholder="Enter username"
+                    required
+                    autocomplete="username"
+                >
+
+                <label for="password">Password</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter password"
+                    required
+                    autocomplete="current-password"
+                >
+
+                <button type="submit" class="btn btn-primary">Connect</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
