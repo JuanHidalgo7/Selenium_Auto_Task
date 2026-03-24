@@ -1,0 +1,50 @@
+1. Install Python
+Make sure Python is installed.
+
+In terminal or command prompt, check with:
+python --version
+
+or:
+python3 --version
+
+You should also verify pip:
+python -m pip --version
+
+or:
+python3 -m pip --version
+
+2. Install the requirements
+Once the environment is active, install everything from requirements.txt.
+
+On Windows:
+python -m pip install -r requirements.txt
+
+On macOS:
+python3 -m pip install -r requirements.txt
+
+3. Things that also need to exist on the computer
+
+Besides the Python packages, the app also needs:
+A. Google Chrome installed
+Your script uses Chrome through Selenium, so Chrome should be installed.
+
+B. Python with Tkinter support
+Your app uses Tkinter for the GUI.
+Usually this is already included.
+
+To verify it works, run:
+python -m tkinter
+
+or on macOS:
+python3 -m tkinter
+
+If a small Tkinter window opens, it is working.
+
+4. How to run the .py file
+Once everything is installed, go to the folder where your script is located and run:
+
+On Windows
+python dashboard_app.py
+
+On macOS
+python3 dashboard_openedg_app.py
